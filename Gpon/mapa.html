@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="../estilos.css">
+    <link rel="stylesheet" href="../fonts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+$(document).ready(function(){
+    $('.zoom').hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
+    });
+});
+</script>
+
+
+</head>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><span class="primero"><i class="icon icon-home"></i></span>Inicio</a></li>
+                <li><a href="#"><span class="segundo"><i class="icon icon-make-group"></i></span>S1-9306-calama</a>
+                  <ul>
+                    <li><a href="s1calama.html">Tarjeta 1</a></li>
+                    <li><a href="s1t2calama.html">Tarjeta 2</a></li>
+                    <li><a href="s1t3calama.html">Tarjeta 3</a></li>
+                    
+                    <li><a href="../nodos_calama.html">Volver</a></li>
+                  </ul>
+                </li>
+                <li><a href="#"><span class="tercero"><i class="icon icon-make-group"></i></span>Cobre</a></li>
+                <li><a href="#"><span class="cuarto"><i class="icon icon-make-group"></i></span>GPON</a>
+                    <ul>
+                    <li><a href="#">RED GPON</a></li>
+                    <li><a href="#">RED ROMA</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#">MANUALES</a></li>
+                  </ul>
+                </li>
+                <li><a href="#"><span class="quinto"><i class="icon icon-make-group"></i></span>Configuracion</a>
+                    <ul>
+                    <li><a href="../nodos_calama.html">DEDICADOS</a></li>
+                    <li><a href="#">MPLS</a></li>
+                    <li><a href="#">TKIP</a></li>
+                    <li><a href="#">MANUALES</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+     <body>
+         <table>
+         <div id="main-container">
+         <thead>
+         <tr>
+             <th bgcolor=#174459>MAPA</th>
+         </tr>
+        </thead>
+         <tr>
+            <td>
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wrzwLseCSj03dqPJ1u3L3VbTnpr98_IT" width="940" height="480"></iframe>
+         </td>
+      </tr>
+
+         </div>
+
+
+
+     </table>
+     
+
+      
+ 
+</body>
+</html>

@@ -1,0 +1,43 @@
+freddy ibañez
+
+
+Viejo
+
+interface FastEthernet4.2019
+ encapsulation dot1Q 2019
+ ip vrf forwarding ENEL-CHILE
+ ip address 10.233.204.226 255.255.255.252
+!
+interface FastEthernet4.2024
+ encapsulation dot1Q 2024
+ ip address 10.233.204.234 255.255.255.252
+ service-policy output PADRE
+
+nuevo
+
+En el PE (?) original del acceso:
+
+                - VLan 1928 (EnelChile), IP del PE? : 10.232.89.9/30
+                               Eliminar las rutas que apuntan a la plataforma ViaSat 10.232.89.10:
+                               10.233.204.224/30 (WAN Router CE)
+
+                - VLan 3963 (HidroPull) , IP del PE? : 10.222.49.73/30
+                               Eliminar las rutas que apuntan a la plataforma ViaSat 10.222.49.74:
+                               10.233.204.232/30 (WAN Router CE)
+                               10.233.229.184/32 (LoopBack Router CE)
+                               10.106.59.160/29 (LAN Router CE)
+
+En el PE5-Metro:
+
+                - VLAN 2019 (EnelChile), IP PE  10.192.1.9/30
+                               Crear las rutas apuntando a la nueva plataforma iDirect 10.192.1.10
+                               10.233.204.224/30 (WAN Router CE)
+
+                - VLAN 2024 (HidroPull), IP 10.192.1.89/30
+                               Crear las rutas apuntando a la nueva plataforma iDirect 10.192.1.90
+                               10.233.204.232/30 (WAN Router CE)
+                               10.233.229.184/32 (LoopBack Router CE)
+                               10.106.59.160/29 (LAN Router CE)
+
+Por el Lado del CE se debe cambiar la VLan de la 1928 a la 2019 y de la VLan 3963 a la 2024 (Sub interfaces y encapsulaciones, mantienen IPs).
+
